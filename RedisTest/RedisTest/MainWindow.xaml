@@ -1,0 +1,39 @@
+﻿<Window x:Class="RedisWPF_CRUD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedisWPF_CRUD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.939*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <GroupBox Header="Student Record" HorizontalAlignment="Center" VerticalAlignment="Center" Height="383">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <StackPanel Orientation ="Horizontal">
+                            <DataGrid x:Name="dgStudent" ItemsSource="{Binding StudentList}" AutoGenerateColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Student ID" Binding="{Binding StudentID}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Student Name" Binding="{Binding StudentName}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="DOB" Binding="{Binding DOB}"></DataGridTextColumn> 
+                                </DataGrid.Columns>
+                            </DataGrid>                            
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>                
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
